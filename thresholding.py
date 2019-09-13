@@ -41,6 +41,13 @@ denoise = cv.fastNlMeansDenoisingColored(original1, None,h,hColor,templateWindow
 # pics.append(denoise)
 # names.append('Denoised')
 
+# GAUSSIAN FILTERING
+gaus_blur = cv.GaussianBlur(original1,(5,5),0)
+ret_otsu,otsu = cv.threshold(gaus_blur,0,255,cv.THRESH_BINARY+cv.THRESH_OTSU)
+
+pics.append(otsu)
+names.append('Otsu')
+
 # THRESHOLDING ###################################################################
 
 # BINARY THRESHOLD
@@ -70,6 +77,10 @@ grey_blurred = cv.cvtColor(blurred,cv.COLOR_BGR2GRAY)
 # names.append('Adaptive Mean')
 # pics.append(adap_gauss)
 # names.append('Adaptive Gaussian')
+
+# OTSU THRESHOLDING
+
+
 
 
 # EDGE DETECTION ####################################################################
@@ -101,4 +112,12 @@ cv.destroyAllWindows()
 
 
 # DENOISING #######################################################################
+
+
+
+
+## HISTOGRAMS ##############
+
+# run histograms?
+run_hist = 1
 
