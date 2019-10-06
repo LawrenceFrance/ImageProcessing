@@ -117,7 +117,7 @@ pics.append(eroded)
 names.append('Eroded')
 
 # find contours
-(cnting, contours, _) = cv.findContours(eroded.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+(cnting, contours, _) = cv.findContours(eroded.copy(), cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE)
 
 
 
